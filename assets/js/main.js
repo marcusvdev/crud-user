@@ -1,27 +1,25 @@
-window.addEventListener('load', start);
+let globalNames = ['lorem', 'ipsum', 'dolor', 'amet'];
+let inputName = null;
+let isEdit = false;
+let currentIndex = null;
 
-var globalNames = ['lorem', 'ipsum', 'dolor', 'amet'];
-var inputName = null;
-var isEdit = false;
-var currentIndex = null;
-
-function start() {    
+window.addEventListener('load', () => {
     inputName = document.querySelector('#inputName');
     preventFormSubmit();
     activeInput();
     render();
-}
+});
 
 function preventFormSubmit() {
     var form = document.querySelector('form');
-    form.addEventListener('submit', function(event){
+    form.addEventListener('submit', (event) => {
         event.preventDefault();
     });
 }
 
 function activeInput() {
     inputName.focus();
-    inputName.addEventListener('keyup', function(event){
+    inputName.addEventListener('keyup', (event) => {
         if(event.keyCode === 13){
             var inputValue = event.target.value;
             if(inputValue.trim() !== ''){
@@ -53,7 +51,7 @@ function render() {
         var content = document.createElement('span');
         content.classList.add('textItem');
         content.textContent = item;
-        content.addEventListener('click', function(){
+        content.addEventListener('click', () => {
             inputName.value = item;
             inputName.focus();
             isEdit = true;
@@ -64,10 +62,9 @@ function render() {
 
     function deleteItem(index) {
         var del = document.createElement('button');
-        del.textContent = 'delete';
-        del.classList.add('deleteItem');
-        del.addEventListener('click', function(){
-            globalNames.splice(index, 1);
+        del.addEventListener('click', () => {
+            globalNames = globalNames.filter((_, i) => i !== index);
+            inputName.value = "";
             render();
         });
         return del;
