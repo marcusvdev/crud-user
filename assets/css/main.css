@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;900&display=swap');
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+html, body{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+ul, li{
+    list-style: none;
+}
+
+.container{
+    width: 90%;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.register{
+    width: 100%;
+}
+
+.register__header{
+    padding: 30px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.register__header h1{
+    font-size: 28px;
+    color: cadetblue;
+    margin-bottom: 30px;
+}
+.register__header input{
+    width: 300px;
+    height: 40px;
+    padding-left: 10px;
+    margin-bottom: 5px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+.register__header input:focus{
+    border-color: cornflowerblue;
+}
+.register__header small{
+    display: block;
+    font-size: 12px;
+}
+
+.register__result{
+    padding: 30px 0;
+}
+.register__result h2{
+    font-size: 20px;
+    color: darkcyan;
+    margin-bottom: 20px;
+}
+.register__result ul li{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.register__result ul li span.idItem{
+    width: 18px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 14px;
+    color: rgba(0,0,0,0.6);
+}
+.register__result ul li span.idItem::before{
+    content: "#";
+    display: inline-block;
+}
+.register__result ul li span.textItem{
+    cursor: pointer;
+    width: calc(100% - 18px - 18px);
+    padding-left: 18px;
+    font-weight: 900;
+}
+.register__result ul li button{
+    width: 18px;
+    height: 18px;
+    background-image: url('../img/trash.svg');
+    background-size: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: 0;
+    text-indent: -999em;
+    cursor: pointer;
+}
+.register__result ul li:nth-child(odd){
+    background: rgba(0,0,0,0.2);
+}
+.register__result ul li:nth-child(even){
+    background: rgba(0,0,0,0.4);
+}
