@@ -1,3 +1,3 @@
-# CRUD project with Vanilla JS
+# Simple CRUD project with Vanilla JS
 
 Project developed in Bootcamp - IGTI
